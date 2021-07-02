@@ -24,13 +24,13 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1>Sweet Home</h1>
+                    <h1 class="mt-3">Sweet Home</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <div class="container-fluid">
+                <div class="col px-0">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light px-0">
+                        <div class="container-fluid px-0">
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
@@ -50,6 +50,10 @@
                                 </li>
                             </ul>
                         </div>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                          </form>
                         </div>
                     </nav>
                 </div>
@@ -68,14 +72,12 @@
                                             {{ $apartment->general_info }}
                                        </p>
                                        <p>
-                                            {{ $apartment->price }} VND
+                                            Price: {{ number_format($apartment->price) }} VND
                                        </p>
                                    </div>
                                </div>
                             </div> 
                         @endforeach
-                    </div>
-                    <div class="row justify-content-center">
                         <div class="col">
                             {{ $apartments->links() }}
                         </div>
