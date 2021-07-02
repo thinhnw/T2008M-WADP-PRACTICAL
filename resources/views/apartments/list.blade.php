@@ -27,7 +27,7 @@
                     <h1 class="mt-3">Sweet Home</h1>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col px-0">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light px-0">
                         <div class="container-fluid px-0">
@@ -58,33 +58,71 @@
                     </nav>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-8">
                     <div class="row border p-4">
                         @foreach ($apartments as $apartment)
                            <div class="col-4 mb-3">
                                <div class="card">
+                                    <img src="{{ $apartment->image }}" class="card-img-top" alt="...">
                                    <div class="card-body">
                                        <a href="#" class="text-primary">
                                             {{ $apartment->name }}
                                        </a>
                                        <p>
-                                            {{ $apartment->general_info }}
+                                            Address: 
+                                            <em>
+                                            {{ $apartment->address }}
+                                            </em>
                                        </p>
                                        <p>
-                                            Price: {{ number_format($apartment->price) }} VND
+                                            General Info: 
+                                            <em>
+                                                {{ $apartment->general_info }}
+                                            </em>
+                                       </p>
+                                       <p>
+                                            Price: 
+                                            <b>
+                                            {{ number_format($apartment->price) }} VND
+                                            </b>
                                        </p>
                                    </div>
                                </div>
                             </div> 
                         @endforeach
-                        <div class="col">
+                        <div class="col-12 d-flex justify-content-center mt-3">
                             {{ $apartments->links() }}
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-
+                <div class="col-4 text-end">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <span class="nav-link text-secondary">Search by Area</span>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">District 1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">District 2</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">District 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link text-secondary">Search by Price</span>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="#"> &lt; 1,000,000,000 VND </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="#">  1-5,000,000,000 VND </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="#">  5-10,000,000,000 VND </a>
+                        </li>
+                      </ul>
                 </div>
             </div>
         </div>
